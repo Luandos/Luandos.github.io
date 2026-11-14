@@ -1,0 +1,483 @@
+/* =========================================================
+   STYLE V2 - Visual refinado (substitui as etapas 4.1, 4.2 e 4.3)
+   Princípios: uma cor de destaque só, hierarquia por tipografia,
+   bordas finas no lugar de blocos pesados e bastante espaço em branco.
+   Mobile-first: o que está fora das media queries vale para o celular.
+   ========================================================= */
+
+/* ---------- VARIÁVEIS ---------- */
+:root {
+  --cor-fundo: #0e0e11;
+  --cor-superficie: #141418;
+  --cor-borda: rgba(255, 255, 255, 0.08);
+  --cor-borda-forte: rgba(255, 255, 255, 0.18);
+  --cor-texto: #f4f4f6;
+  --cor-texto-suave: #8e8e9a;
+  --cor-destaque: #a78bfa;          /* lavanda suave: a única cor de destaque */
+
+  --fonte-corpo: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fonte-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --raio: 10px;
+}
+
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- BASE ---------- */
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;   /* texto mais nítido em telas escuras */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;                        /* links herdam a cor ao redor */
+  text-decoration: none;
+}
+
+p {
+  color: var(--cor-texto-suave);         /* texto corrido mais discreto que os títulos */
+  max-width: 60ch;                       /* linhas curtas leem melhor */
+}
+
+::selection {
+  background: rgba(167, 139, 250, 0.3);
+}
+
+/* Contorno visível ao navegar pelo teclado (acessibilidade) */
+:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+/* ---------- SEÇÕES ---------- */
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.25rem;
+}
+
+/* Rótulo pequeno acima dos títulos: "01 / SOBRE" */
+.rotulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--cor-texto-suave);
+  margin-bottom: 1rem;
+}
+
+/* ---------- TÍTULOS ----------
+   clamp(mínimo, ideal, máximo): o tamanho acompanha a largura da tela,
+   mas nunca passa dos limites. */
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- BOTÕES ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 6px;
+  background-color: var(--cor-destaque);
+  color: var(--cor-fundo);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Variação com contorno, para ações secundárias */
+.btn-secundario {
+  background-color: transparent;
+  border-color: var(--cor-borda-forte);
+  color: var(--cor-texto);
+}
+
+.btn-secundario:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Grupo de botões lado a lado */
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* ---------- CABEÇALHO ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  background-color: rgba(14, 14, 17, 0.8);
+  backdrop-filter: blur(12px);           /* desfoca o que passa por trás */
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+header > a {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+header nav ul {
+  display: flex;
+  gap: 1.25rem;
+}
+
+header nav a {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  transition: color 0.2s;
+}
+
+header nav a:hover {
+  color: var(--cor-texto);
+}
+
+/* ---------- 01 HERO ---------- */
+#inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 4rem;
+}
+
+#inicio p {
+  margin-top: 0.75rem;
+}
+
+/* Linha do cargo: monoespaçada e na cor de destaque */
+#inicio .cargo {
+  font-family: var(--fonte-mono);
+  font-size: 0.95rem;
+  color: var(--cor-destaque);
+  margin-top: 1.25rem;
+}
+
+#inicio img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--cor-borda-forte);
+}
+
+/* ---------- 02 SOBRE ---------- */
+#sobre p {
+  font-size: 1.05rem;
+}
+
+/* ---------- 03 TECNOLOGIAS ---------- */
+.grupos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.grupo {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+}
+
+.grupo h3 {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cor-texto-suave);
+  margin-bottom: 1rem;
+}
+
+.grupo ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+/* Cada tecnologia vira uma "etiqueta": ícone pequeno + nome, lado a lado */
+.grupo li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.grupo li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* ---------- 04 PROJETOS ---------- */
+#projetos article {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+#projetos article:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+}
+
+#projetos article p {
+  margin-bottom: 1rem;
+}
+
+#projetos article ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+#projetos article li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--cor-texto-suave);
+}
+
+#projetos article li img {
+  width: 14px;
+  height: 14px;
+}
+
+#projetos article > a {
+  font-size: 0.9rem;
+  color: var(--cor-destaque);
+}
+
+#projetos article > a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- CONTATO ---------- */
+#contato {
+  max-width: none;                       /* ocupa a largura toda para o brilho de fundo */
+  text-align: center;
+  padding: 6rem 1.25rem;
+  /* Brilho suave que sobe da base da seção */
+  background: radial-gradient(
+    ellipse 60% 70% at 50% 100%,
+    rgba(167, 139, 250, 0.14),
+    transparent 70%
+  );
+}
+
+#contato h2 {
+  font-size: clamp(2.25rem, 8vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+/* A palavra em destaque: monoespaçada, lavanda, em linha própria */
+#contato .destaque {
+  display: block;
+  font-family: var(--fonte-mono);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: var(--cor-destaque);
+}
+
+#contato p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contato .acoes {
+  justify-content: center;
+}
+
+/* ---------- RODAPÉ ---------- */
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  border-top: 1px solid var(--cor-borda);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.rodape-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+/* Bolinha com a inicial, como marca pessoal */
+.logo-bolinha {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--cor-destaque);
+  color: var(--cor-fundo);
+  font-size: 0.8rem;
+}
+
+.rodape-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.rodape-links a:hover {
+  color: var(--cor-texto);
+}
+
+/* =========================================================
+   TELAS MAIORES (a partir de 768px)
+   ========================================================= */
+@media (min-width: 768px) {
+  section {
+    padding: 6rem 2rem;
+  }
+
+  header {
+    padding: 1rem 2rem;
+  }
+
+  #inicio {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #inicio img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .grupos {
+    flex-direction: row;
+  }
+
+  .grupo {
+    flex: 1;
+  }
+
+  .grupo:first-child {
+    flex: 2;
+  }
+
+  #contato {
+    padding: 8rem 2rem;
+  }
+
+  /* ---------- SPOTLIGHT nos cartões de projeto ----------
+   O CSS não sabe onde está o cursor. O JavaScript descobre a posição
+   e entrega para o CSS em duas variáveis: --x e --y. */
+#projetos article {
+  position: relative;      /* referência para posicionar o brilho */
+  overflow: hidden;        /* o brilho não vaza para fora das bordas arredondadas */
+}
+
+/* Pseudo-elemento: uma camada extra criada só pelo CSS, sem mexer no HTML */
+#projetos article::before {
+  content: "";
+  position: absolute;
+  inset: 0;                /* cobre o cartão inteiro */
+  background: radial-gradient(
+    300px circle at var(--x, 50%) var(--y, 50%),
+    rgba(167, 139, 250, 0.12),
+    transparent 60%
+  );
+  opacity: 0;              /* escondido até o mouse chegar */
+  transition: opacity 0.3s;
+  pointer-events: none;    /* não atrapalha cliques nos links do cartão */
+}
+
+#projetos article:hover::before {
+  opacity: 1;
+}
+
+/* Mantém o conteúdo do cartão por cima do brilho */
+#projetos article > * {
+  position: relative;
+}
+
+  
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+}

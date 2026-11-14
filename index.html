@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Faz a página se ajustar à tela do celular (essencial para mobile-first) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Aparece no Google e ao compartilhar o link: escreva a sua versão -->
+  <meta name="description" content="Desenvolvedor Backend">
+  <title>Luan | Portifolio</title>
+
+  <!-- O CSS será criado na Etapa 4 (o arquivo ainda não existe, é normal) -->
+  <link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===== CABEÇALHO + NAVEGAÇÃO ===== -->
+  <header>
+    <a href="#inicio">Luan</a>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#skills">Staks</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== 01 HERO ===== -->
+    <section id="inicio">
+      <div>
+        <h1>Luan Santos</h1>
+        <p>Crio projetos de sistemas e busco aprendizado em automação e sistemas com integrações completas entre databases e servidores </p>
+        <p>Tenho apreciação por automação e análise de dados e busco criar soluções inovadoras</p>
+        <div class="acoes">
+          <a class="btn" href="#projetos">Ver projetos</a>
+          <a class="btn btn-secundario" href="https://github.com/Luandos">GitHub</a>
+        </div>
+      </div>
+      <!-- alt descreve a imagem para leitores de tela e para quando ela não carrega -->
+      <img src="img/foto.jpg" alt="Foto de Luan">
+    </section>
+
+    <!-- ===== 02 SOBRE ===== -->
+    <section id="sobre">
+      <p class="rotulo">01 / Sobre</p>
+      <h2>Sobre</h2> <!-- Talvez tirar o h2 de todos -->
+      <p>Sou estudante de Ciência da Computação e aplico meus conhecimentos em projetos práticos e expando meu estudo com áreas relacionadas que me atraem, busco expêriencia prática em estágios.</p>
+    </section>
+    <!-- ===== 03 TECNOLOGIAS ===== -->
+    <section id="skills">
+      <p class="rotulo">02 / Staks</p>
+      <h2>Staks</h2>
+
+      <div class="grupos">
+        <div class="grupo">
+          <h3>Linguagens</h3>
+          <ul>
+            <li>
+              <img src="img/python.svg" alt="">
+              <span>Python</span>
+            </li>
+            <li>
+              <img src="img/c.svg" alt="">
+              <span>C</span>
+            </li>
+            <li>
+              <img src="img/javascript.svg" alt="">
+              <span>JavaScript</span>
+            </li>
+            <li>
+              <img src="img/html-5.svg" alt="">
+              <span>HTML</span>
+            </li>
+            <li>
+              <img src="img/css.svg" alt="">
+              <span>CSS</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grupo">
+          <h3>Banco de dados</h3>
+          <ul>
+            <li>
+              <img src="img/mysql.svg" alt="">
+              <span>MySQL</span>
+            </li>
+            <li>
+              <img src="img/postgresql.svg" alt="">
+              <span>PostgreSQL</span>
+            </li>
+          </ul>
+        </div>
+      </div>  
+    </section>
+
+    <!-- ===== 04 PROJETOS ===== -->
+    <section id="projetos">
+      <p class="rotulo">03 / Projetos</p>
+      <h2>Projetos</h2>
+
+      <!-- Cada projeto é independente, por isso usamos <article> -->
+      <article>
+        <h3>Gerenciamento de Arquivo</h3>
+        <p>Sistema para gerenciar arquivos de forma eficiente e automática.</p>
+        <ul>
+          <li>Python</li> <!-- Aqui colocar uma imagem da linguagem -->
+        </ul>
+        <a href="https://github.com/Luandos/gerenciamento_arquivo">Ver código</a>
+      </article>
+
+      <article>
+        <h3>Sistema de Estoque</h3>
+        <p>Pequeno sistema ERP para gerenciar o estoque de produtos.</p>
+        <ul>
+          <li>Python</li> <!-- Aqui colocar uma imagem da linguagem -->
+        </ul>
+        <a href="https://github.com/Luandos/Sistema_De_Estoque">Ver código</a>
+      </article>
+
+      <article>
+        <h3>Task List</h3>
+        <p>Aplicação para gerenciar tarefas pendentes e visualização de progresso.</p>
+        <ul>
+          <li>Python</li>
+        </ul>
+        <a href="https://github.com/Luandos/Task_List">Ver código</a>
+      </article>
+    </section>
+
+    <!-- ===== CONTATO (chamada final) ===== -->
+    <section id="contato">
+        <p class="rotulo">04 / Tem algo em mente?</p>
+        <h2>Vamos criar algo <span class="destaque">juntos.</span></h2>
+        <p>Tem algum projeto que queira contribuição ou precisa de algum serviço?</p>
+        <div class="acoes">
+          <a class="btn" href="mailto:luandosssantos9@gmail.com">Iniciar conversa ↗</a>
+          <button type="button" id="copiar-email" class="btn btn-secundario">Copiar e-mail</button>
+        </div>
+     </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+  <div class="rodape-marca">
+    <span class="logo-bolinha">L</span>
+    <span>Luan</span>
+  </div>
+  <p>© 2026 — Luandos</p>
+  <nav class="rodape-links">
+    <a href="https://www.linkedin.com/in/luandos">LinkedIn ↗</a>
+    <a href="https://github.com/Luandos">GitHub ↗</a>
+  </nav>
+</footer>
+
+  <!-- O JS será criado na Etapa 5. "defer" carrega o script depois do HTML -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>
