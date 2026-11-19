@@ -1,11 +1,4 @@
-/* =========================================================
-   STYLE V2 - Visual refinado (substitui as etapas 4.1, 4.2 e 4.3)
-   Princípios: uma cor de destaque só, hierarquia por tipografia,
-   bordas finas no lugar de blocos pesados e bastante espaço em branco.
-   Mobile-first: o que está fora das media queries vale para o celular.
-   ========================================================= */
-
-/* ---------- VARIÁVEIS ---------- */
+/*  VARIÁVEIS  */
 :root {
   --cor-fundo: #0e0e11;
   --cor-superficie: #141418;
@@ -21,7 +14,7 @@
   --raio: 10px;
 }
 
-/* ---------- RESET ---------- */
+/*  RESET  */
 *,
 *::before,
 *::after {
@@ -34,7 +27,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ---------- BASE ---------- */
+/*  BASE  */
 body {
   font-family: var(--fonte-corpo);
   background-color: var(--cor-fundo);
@@ -72,7 +65,7 @@ p {
   outline-offset: 3px;
 }
 
-/* ---------- SEÇÕES ---------- */
+/*  SEÇÕES  */
 section {
   max-width: 1000px;
   margin: 0 auto;
@@ -89,7 +82,7 @@ section {
   margin-bottom: 1rem;
 }
 
-/* ---------- TÍTULOS ----------
+/*  TÍTULOS 
    clamp(mínimo, ideal, máximo): o tamanho acompanha a largura da tela,
    mas nunca passa dos limites. */
 h1 {
@@ -113,7 +106,7 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-/* ---------- BOTÕES ---------- */
+/*  BOTÕES  */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -154,7 +147,7 @@ h3 {
   margin-top: 2rem;
 }
 
-/* ---------- CABEÇALHO ---------- */
+/*  CABEÇALHO  */
 header {
   position: sticky;
   top: 0;
@@ -190,7 +183,7 @@ header nav a:hover {
   color: var(--cor-texto);
 }
 
-/* ---------- 01 HERO ---------- */
+/*  01 HERO  */
 #inicio {
   display: flex;
   flex-direction: column;
@@ -218,25 +211,19 @@ header nav a:hover {
   border: 1px solid var(--cor-borda-forte);
 }
 
-/* ---------- 02 SOBRE ---------- */
+/*  02 SOBRE  */
 #sobre p {
   font-size: 1.05rem;
 }
 
-/* ---------- 03 TECNOLOGIAS ---------- */
+/*  03 TECNOLOGIAS  */
 .grupos {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 
-.grupo {
-  background-color: var(--cor-superficie);
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--raio);
-  padding: 1.5rem;
-}
-
+/* O título de cada grupo continua como rótulo pequeno */
 .grupo h3 {
   font-family: var(--fonte-mono);
   font-size: 0.75rem;
@@ -249,28 +236,62 @@ header nav a:hover {
 
 .grupo ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.75rem;
 }
 
-/* Cada tecnologia vira uma "etiqueta": ícone pequeno + nome, lado a lado */
 .grupo li {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 0.8rem;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  background-color: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
   font-size: 0.875rem;
+  color: var(--cor-texto-suave);
+  cursor: default;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+/* HOVER: texto vira lavanda, borda e fundo ganham um tom suave */
+.grupo li:hover {
+  color: var(--cor-destaque);
+  border-color: rgba(167, 139, 250, 0.5);
+  background-color: rgba(167, 139, 250, 0.06);
 }
 
 .grupo li img {
   width: 24px;
   height: 24px;
   object-fit: contain;
+  /* Opcional: ícones começam em cinza e ganham cor no hover. */
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: filter 0.2s, opacity 0.2s;
 }
 
-/* ---------- 04 PROJETOS ---------- */
+.grupo li:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+/* celular: linha em cima do segundo grupo */
+.grupo + .grupo {
+  border-top: 1px solid var(--cor-borda);
+  padding-top: 2.5rem;
+}
+
+/* dentro do @media (min-width: 768px): linha à esquerda */
+.grupo + .grupo {
+  border-top: none;
+  padding-top: 0;
+  border-left: 1px solid var(--cor-borda);
+  padding-left: 2.5rem;
+}
+
+
+/*  04 PROJETOS  */
 #projetos article {
   background-color: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
@@ -321,12 +342,11 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-/* ---------- CONTATO ---------- */
+/*  CONTATO  */
 #contato {
-  max-width: none;                       /* ocupa a largura toda para o brilho de fundo */
+  max-width: none;                       
   text-align: center;
   padding: 6rem 1.25rem;
-  /* Brilho suave que sobe da base da seção */
   background: radial-gradient(
     ellipse 60% 70% at 50% 100%,
     rgba(167, 139, 250, 0.14),
@@ -358,7 +378,7 @@ header nav a:hover {
   justify-content: center;
 }
 
-/* ---------- RODAPÉ ---------- */
+/*  RODAPÉ  */
 footer {
   max-width: 1000px;
   margin: 0 auto;
@@ -383,15 +403,24 @@ footer {
 
 /* Bolinha com a inicial, como marca pessoal */
 .logo-bolinha {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;           /* nunca é espremida pelo flex */
   border-radius: 50%;
-  background-color: var(--cor-destaque);
-  color: var(--cor-fundo);
-  font-size: 0.8rem;
+  overflow: hidden;         /* o círculo "corta" o que sobra da imagem */
+  border: 1px solid var(--cor-borda-forte);
+  background-color: var(--cor-superficie);
 }
+
+.logo-bolinha img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;   /* foco no rosto: 0% = topo, 100% = base */
+}
+
+
 
 .rodape-links {
   display: flex;
@@ -402,9 +431,7 @@ footer {
   color: var(--cor-texto);
 }
 
-/* =========================================================
-   TELAS MAIORES (a partir de 768px)
-   ========================================================= */
+/*  TELAS MAIORES (a partir de 768px) */
 @media (min-width: 768px) {
   section {
     padding: 6rem 2rem;
@@ -441,19 +468,17 @@ footer {
     padding: 8rem 2rem;
   }
 
-  /* ---------- SPOTLIGHT nos cartões de projeto ----------
-   O CSS não sabe onde está o cursor. O JavaScript descobre a posição
-   e entrega para o CSS em duas variáveis: --x e --y. */
+
 #projetos article {
   position: relative;      /* referência para posicionar o brilho */
-  overflow: hidden;        /* o brilho não vaza para fora das bordas arredondadas */
+  overflow: hidden;        
 }
 
 /* Pseudo-elemento: uma camada extra criada só pelo CSS, sem mexer no HTML */
 #projetos article::before {
   content: "";
   position: absolute;
-  inset: 0;                /* cobre o cartão inteiro */
+  inset: 0;               
   background: radial-gradient(
     300px circle at var(--x, 50%) var(--y, 50%),
     rgba(167, 139, 250, 0.12),
@@ -473,7 +498,6 @@ footer {
   position: relative;
 }
 
-  
 
   footer {
     flex-direction: row;

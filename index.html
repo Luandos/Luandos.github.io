@@ -2,13 +2,10 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <!-- Faz a página se ajustar à tela do celular (essencial para mobile-first) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Aparece no Google e ao compartilhar o link: escreva a sua versão -->
-  <meta name="description" content="Desenvolvedor Backend">
-  <title>Luan | Portifolio</title>
+  <meta name="description" content="Portifolio de Luan Santos, estudante de Ciência da Computação, com projetos em Python, C, JavaScript, HTML e CSS.">
+  <title>Luan Santos</title>
 
-  <!-- O CSS será criado na Etapa 4 (o arquivo ainda não existe, é normal) -->
   <link rel="stylesheet" href="css/style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,13 +15,13 @@
 
 <body>
 
-  <!-- ===== CABEÇALHO + NAVEGAÇÃO ===== -->
+  <!-- CABEÇALHO + NAVEGAÇÃO -->
   <header>
-    <a href="#inicio">Luan</a>
+    <a href="#inicio">Luan Santos</a>
     <nav>
       <ul>
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#skills">Staks</a></li>
+        <li><a href="#skills">Stack</a></li>
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -33,31 +30,30 @@
 
   <main>
 
-    <!-- ===== 01 HERO ===== -->
+    <!-- 01 HERO  -->
     <section id="inicio">
       <div>
         <h1>Luan Santos</h1>
-        <p>Crio projetos de sistemas e busco aprendizado em automação e sistemas com integrações completas entre databases e servidores </p>
-        <p>Tenho apreciação por automação e análise de dados e busco criar soluções inovadoras</p>
+        <p>Desenvolvo projetos na área de backend, com foco em bancos de dados, servidores e integração entre sistemas. </p>
+        <p>Tenho interesse em automação e análise de dados, áreas que busco explorar por meio de projetos práticos e soluções que conectam diferentes tecnologias.</p>
         <div class="acoes">
           <a class="btn" href="#projetos">Ver projetos</a>
           <a class="btn btn-secundario" href="https://github.com/Luandos">GitHub</a>
         </div>
       </div>
-      <!-- alt descreve a imagem para leitores de tela e para quando ela não carrega -->
-      <img src="img/foto.jpg" alt="Foto de Luan">
+      <img src="img/foto-luan.jpg" alt="Foto de Luan">
     </section>
 
-    <!-- ===== 02 SOBRE ===== -->
+    <!-- 02 SOBRE -->
     <section id="sobre">
       <p class="rotulo">01 / Sobre</p>
-      <h2>Sobre</h2> <!-- Talvez tirar o h2 de todos -->
-      <p>Sou estudante de Ciência da Computação e aplico meus conhecimentos em projetos práticos e expando meu estudo com áreas relacionadas que me atraem, busco expêriencia prática em estágios.</p>
+      <h2>Sobre</h2> 
+      <p>Sou estudante de Ciência da Computação e busco desenvolver meus conhecimentos por meio de projetos práticos e estudos em diferentes áreas da tecnologia. Atualmente, tenho direcionado meu aprendizado para o desenvolvimento backend, bancos de dados, servidores e automação, enquanto busco oportunidades de estágio para adquirir experiência profissional e contribuir em projetos.</p>
     </section>
-    <!-- ===== 03 TECNOLOGIAS ===== -->
+    <!-- 03 TECNOLOGIAS   -->
     <section id="skills">
-      <p class="rotulo">02 / Staks</p>
-      <h2>Staks</h2>
+      <p class="rotulo">02 / Stack</p>
+      <h2>Stack</h2>
 
       <div class="grupos">
         <div class="grupo">
@@ -94,49 +90,48 @@
               <span>MySQL</span>
             </li>
             <li>
-              <img src="img/postgresql.svg" alt="">
-              <span>PostgreSQL</span>
+              <img src="img/sqlite.svg" alt="">
+              <span>SQLite</span>
             </li>
           </ul>
         </div>
       </div>  
     </section>
 
-    <!-- ===== 04 PROJETOS ===== -->
+    <!--  04 PROJETOS  -->
     <section id="projetos">
       <p class="rotulo">03 / Projetos</p>
       <h2>Projetos</h2>
 
-      <!-- Cada projeto é independente, por isso usamos <article> -->
       <article>
         <h3>Gerenciamento de Arquivo</h3>
-        <p>Sistema para gerenciar arquivos de forma eficiente e automática.</p>
+        <p>Desenvolvido em Python, o projeto consiste em uma ferramenta de automação para organização de arquivos, capaz de identificar suas extensões e separá-los automaticamente em pastas específicas. Para isso, utiliza a biblioteca Pathlib na identificação e manipulação de diretórios e a Shutil para realizar a cópia dos arquivos para seus respectivos destinos. Também conta com um sistema de registros (log), implementado para armazenar informações sobre as operações realizadas, utilizando o módulo Datetime para registrar datas e horários. O projeto explora conceitos de automação, manipulação de arquivos e organização de processos utilizando Python.</p>
         <ul>
-          <li>Python</li> <!-- Aqui colocar uma imagem da linguagem -->
+          <li>Python</li> 
         </ul>
         <a href="https://github.com/Luandos/gerenciamento_arquivo">Ver código</a>
       </article>
 
       <article>
         <h3>Sistema de Estoque</h3>
-        <p>Pequeno sistema ERP para gerenciar o estoque de produtos.</p>
+        <p>Desenvolvido em Python com integração ao banco de dados SQLite, o projeto tem como objetivo facilitar o controle e o gerenciamento de produtos em estoque. O sistema permite cadastrar mercadorias, consultar registros e controlar entradas e saídas, além de identificar produtos com quantidades abaixo do limite estabelecido. A integração com SQLite é realizada por meio de comandos SQL, responsáveis por armazenar, consultar e atualizar as informações no banco de dados, garantindo a persistência dos registros. A aplicação também conta com validações para evitar operações inconsistentes e possui uma estrutura modular que separa as funcionalidades do sistema das operações de banco de dados. O projeto trabalha conceitos de CRUD, modelagem e manipulação de dados relacionais, integração entre aplicação e banco de dados e organização de código.</p>
         <ul>
-          <li>Python</li> <!-- Aqui colocar uma imagem da linguagem -->
+          <li>Python</li> <li>SQLite</li> <li>SQL</li> <li>CRUD</li> 
         </ul>
         <a href="https://github.com/Luandos/Sistema_De_Estoque">Ver código</a>
       </article>
 
       <article>
         <h3>Task List</h3>
-        <p>Aplicação para gerenciar tarefas pendentes e visualização de progresso.</p>
+        <p>Desenvolvido em Python, o projeto consiste em uma aplicação para gerenciamento de tarefas, permitindo cadastrar, consultar, atualizar e excluir atividades. Cada tarefa possui informações próprias, como identificador, título, descrição, datas de criação e atualização e status de andamento. Para organizar os registros, são utilizadas listas e dicionários do Python, enquanto o formato JSON é responsável por armazenar as informações em um arquivo externo. O módulo Datetime auxilia no controle das datas, e as funcionalidades são organizadas em funções específicas, facilitando a manutenção e a execução das operações. O projeto explora conceitos de manipulação e persistência de dados, operações CRUD, estruturas de dados e tratamento de exceções.</p>
         <ul>
-          <li>Python</li>
+          <li>Python</li> <li>CRUD</li> <li>JSON</li>
         </ul>
         <a href="https://github.com/Luandos/Task_List">Ver código</a>
       </article>
     </section>
 
-    <!-- ===== CONTATO (chamada final) ===== -->
+    <!--  CONTATO   -->
     <section id="contato">
         <p class="rotulo">04 / Tem algo em mente?</p>
         <h2>Vamos criar algo <span class="destaque">juntos.</span></h2>
@@ -149,20 +144,20 @@
 
   </main>
 
-  <!-- ===== RODAPÉ ===== -->
+  <!--  RODAPÉ  -->
   <footer>
   <div class="rodape-marca">
-    <span class="logo-bolinha">L</span>
+    <span class="logo-bolinha"><img src="img/foto-luan.jpg" alt=""></span>
     <span>Luan</span>
   </div>
-  <p>© 2026 — Luandos</p>
+  <p>© 2026 — Luan Santos</p>
   <nav class="rodape-links">
     <a href="https://www.linkedin.com/in/luandos">LinkedIn ↗</a>
     <a href="https://github.com/Luandos">GitHub ↗</a>
   </nav>
 </footer>
 
-  <!-- O JS será criado na Etapa 5. "defer" carrega o script depois do HTML -->
+ 
   <script src="js/script.js" defer></script>
 </body>
 </html>
